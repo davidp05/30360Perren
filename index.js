@@ -1,9 +1,19 @@
-let numero = parseInt(prompt("Ingrese un número para generar la tabla de multiplicar"));
 
-for(let i = 1; i <=10; i++){
-    let multi = numero * i;
-    alert(numero + " x " + i + " = " + multi);
-}
+alert("El siguiente programa calcula el precio de un producto con un porcentaje aplicado");
+alert("En la siguiente ventana, coloque un precio y a continuación coloque el porcentaje de descuento a aplicar");
+let precio = parseInt(prompt("Coloque un precio"));
+let descuento = parseInt(prompt("Coloque un porcentaje de descuento"));
+
+let resultado = (precio - (precio * (descuento/100)));
+alert("El precio de su producto es " + resultado);
+
+
+// let numero = parseInt(prompt("Ingrese un número para generar la tabla de multiplicar"));
+
+// for(let i = 1; i <=10; i++){
+//     let multi = numero * i;
+//     alert(numero + " x " + i + " = " + multi);
+// }
 
 // Pedir nombre
 
@@ -85,10 +95,3 @@ var num2 = parseInt(y); */
 
 //ACTIVIDAD 5
 
-// alert("el siguiente programa calcula el precio de un producto con un porcentaje aplicado");
-// alert("en la siguiente ventana, coloque un precio y a continuación coloque el porcentaje de descuento a aplicar");
-// let precio = parseInt(prompt("Coloque un precio"));
-// let descuento = parseInt(prompt("Coloque un porcentaje de descuento"));
-
-// let resultado = (precio - (precio * (descuento/100)));
-// alert(resultado);
