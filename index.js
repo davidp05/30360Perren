@@ -181,3 +181,51 @@ var num2 = parseInt(y); */
 
 //Javascript 3
 //Actividad 1
+
+// let repeticion = parseInt(prompt("Coloque el numero de veces que se va a repetir el mensaje"))
+
+// for (i = 1; i < repeticion ; i++){
+//     alert("Hola");
+// }
+
+//Actividad 2
+// let repeticion = parseInt(prompt("Coloque el numero de veces que se va a repetir el mensaje"))
+
+// for (i = 1; i < repeticion ; i++){
+//     if (i == 4){
+//         break
+//     }
+//     alert("Lado");
+// }
+
+//Actividad 3
+
+// alert("Ingrese 10 nombres")
+
+// let nombre1 = prompt("Ingrese un nombre")
+// let nombre2 = prompt("Ingrese un nombre")
+// let nombre3 = prompt("Ingrese un nombre")
+// let nombre4 = prompt("Ingrese un nombre")
+// let nombre5 = prompt("Ingrese un nombre")
+// let nombre6 = prompt("Ingrese un nombre")
+// let nombre7 = prompt("Ingrese un nombre")
+// let nombre8 = prompt("Ingrese un nombre")
+// let nombre9 = prompt("Ingrese un nombre")
+// let nombre10 = prompt("Ingrese un nombre")
+
+
+const motos =   [{ id: 1,  producto: "Wave", precio: 230000 },
+                    {  id: 2,  producto: "Xr150", precio: 495000 },
+                    {  id: 3,  producto: "Xr190"  , precio: 600000},
+                    {  id: 4,  producto: "Titan" , precio: 450000},
+                    {  id: 5,  producto: "Tornado" , precio: 940000}]
+
+const buscar = motos.find(producto => producto.id === 3)
+console.log(buscar)
+
+const existe = motos.some(producto => producto.producto === "Tornado")
+console.log(existe)
+
+const barata = motos.filter(producto => producto.precio < 300000)
+console.log(barata)
+
