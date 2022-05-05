@@ -214,18 +214,18 @@ var num2 = parseInt(y); */
 // let nombre10 = prompt("Ingrese un nombre")
 
 
-alert("En el siguiente proceso va a poder conocer más sobre la moto que desea.")
-let moto = prompt("ingrese el nombre de la moto:\n1. Wave\n2. Xr150\n3. Xr190\n4. Titan\n5. Tornado");
-const motos = [
-    {nombre: 'Wave', precio: 230000, colores: "Negro, rojo y blanco", disponible: "Si"},
-    {nombre: 'Xr150', precio: 495000, colores: "Negro y blanco", disponible: "Si"},
-    {nombre: 'Xr190', precio: 600000, colores: "Negro", disponible: "Si"},
-    {nombre: 'Titan', precio: 450000, colores: "Negro, rojo y azul", disponible: "Si"},
-    {nombre: 'Tornado', precio: 940000, colores: "Rojo y blanco", disponible: "Si"},
-];
+// alert("En el siguiente proceso va a poder conocer más sobre la moto que desea.")
+// let moto = prompt("ingrese el nombre de la moto:\n1. Wave\n2. Xr150\n3. Xr190\n4. Titan\n5. Tornado");
+// const motos = [
+//     {nombre: 'Wave', precio: 230000, colores: "Negro, rojo y blanco", disponible: "Si"},
+//     {nombre: 'Xr150', precio: 495000, colores: "Negro y blanco", disponible: "Si"},
+//     {nombre: 'Xr190', precio: 600000, colores: "Negro", disponible: "Si"},
+//     {nombre: 'Titan', precio: 450000, colores: "Negro, rojo y azul", disponible: "Si"},
+//     {nombre: 'Tornado', precio: 940000, colores: "Rojo y blanco", disponible: "Si"},
+// ];
 
-const result = motos.find((elem) => elem.nombre === moto);
-alert("Seleccionaste la moto "+result.nombre+" su precio es de: $"+result.precio+" su color puede ser: "+" "+result.colores+" ¿Quieres saber si se encuentra disponible? La respuesta es: "+result.disponible+" "+".Aguardamos tu compra. Gracias")
+// const result = motos.find((elem) => elem.nombre === moto);
+// alert("Seleccionaste la moto "+result.nombre+" su precio es de: $"+result.precio+" su color puede ser: "+" "+result.colores+" ¿Quieres saber si se encuentra disponible? La respuesta es: "+result.disponible+" "+".Aguardamos tu compra. Gracias")
 
 
 // const buscar = motos.find(producto => producto.id === 3)
@@ -236,3 +236,14 @@ alert("Seleccionaste la moto "+result.nombre+" su precio es de: $"+result.precio
     
 // const barata = motos.filter(producto => producto.precio < 300000)
 // console.log(barata)
+
+function respuestaClick(){
+    console.log("Respuesta evento click")
+}
+    let evento = prompt("Ingrese el evento")
+    let boton = document.getElementById
+    ("btnPrincipal");
+    if(evento === "click"){
+        boton.addEventListener(evento, respuestaClick);
+    }
+
