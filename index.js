@@ -214,18 +214,25 @@ var num2 = parseInt(y); */
 // let nombre10 = prompt("Ingrese un nombre")
 
 
-const motos =   [{ id: 1,  producto: "Wave", precio: 230000 },
-                    {  id: 2,  producto: "Xr150", precio: 495000 },
-                    {  id: 3,  producto: "Xr190"  , precio: 600000},
-                    {  id: 4,  producto: "Titan" , precio: 450000},
-                    {  id: 5,  producto: "Tornado" , precio: 940000}]
+alert("En el siguiente proceso va a poder conocer más sobre la moto que desea.")
+let moto = prompt("ingrese el nombre de la moto:\n1. Wave\n2. Xr150\n3. Xr190\n4. Titan\n5. Tornado");
+const motos = [
+    {nombre: 'Wave', precio: 230000, colores: "Negro, rojo y blanco", disponible: "Si"},
+    {nombre: 'Xr150', precio: 495000, colores: "Negro y blanco", disponible: "Si"},
+    {nombre: 'Xr190', precio: 600000, colores: "Negro", disponible: "No"},
+    {nombre: 'Titan', precio: 450000, colores: "Negro, rojo y azul", disponible: "Si"},
+    {nombre: 'Tornado', precio: 940000, colores: "Rojo y blanco", disponible: "Si"},
+];
 
-const buscar = motos.find(producto => producto.id === 3)
-console.log(buscar)
+const result = motos.find((elem) => elem.nombre === moto);
+console.log(result);
 
-const existe = motos.some(producto => producto.producto === "Tornado")
-console.log(existe)
 
-const barata = motos.filter(producto => producto.precio < 300000)
-console.log(barata)
-
+    // const buscar = motos.find(producto => producto.id === 3)
+    // console.log(buscar)
+    
+    // const existe = motos.some(producto => producto.producto === "Tornado")
+    // console.log(existe)
+    
+    // const barata = motos.filter(producto => producto.precio < 300000)
+    // console.log(barata)
