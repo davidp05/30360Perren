@@ -200,18 +200,60 @@ var num2 = parseInt(y); */
 
 //Actividad 3
 
+let alumnos = '';
+for (let index = 0; index < 10; index++) {
+    alumnos += prompt("INGRESAR NOMBRE DE ALUMNO")+"\n";
+}
+alert(alumnos);
+
 // alert("Ingrese 10 nombres")
 
-// let nombre1 = prompt("Ingrese un nombre")
-// let nombre2 = prompt("Ingrese un nombre")
-// let nombre3 = prompt("Ingrese un nombre")
-// let nombre4 = prompt("Ingrese un nombre")
-// let nombre5 = prompt("Ingrese un nombre")
-// let nombre6 = prompt("Ingrese un nombre")
-// let nombre7 = prompt("Ingrese un nombre")
-// let nombre8 = prompt("Ingrese un nombre")
-// let nombre9 = prompt("Ingrese un nombre")
-// let nombre10 = prompt("Ingrese un nombre")
+// const listaNombres = []
+// let cantidad = 10
+
+// do{
+//     let entrada = prompt("Ingrese un nombre y apellido");
+//     listaNombres.push(entrada.toUpperCase());
+//     console.log(listaNombres.length);
+// } while(listaNombres.length != cantidad)
+
+// const nuevaLista = listaNombres.concat();
+
+// alert(nuevaLista.join("\n"));
+
+//Actividad 4
+// const listaNombres = []
+// let entrada = prompt("Ingresar un nombre");
+// //Repetimos con While hasta que el usuario ingresa "ESC"
+// while(entrada != "Voldemort" ){
+//     listaNombres.push(entrada);
+//     const nuevaLista = listaNombres.concat();
+//     //Volvemos a solicitar un dato. En la próxima iteración se evalúa si no es Voldemort.
+//     entrada = prompt("Ingresar otro nombre");
+// }
+// alert("No tenias que nombrarlo");
+// alert(nuevaLista.join("\n"));
+
+//actividad 5
+// const listaProductos = []
+// let entrada = prompt("Ingresa un numero del 1 al 4");
+
+// //repetimos con while hasta que coloque "ESC"
+//  while(entrada != "ESC"){
+//      if (entrada === "1"){
+//          listaProductos.push("Tomate");
+//      } else if (entrada === "2"){
+//          listaProductos.push("Papa");
+//      } else if (entrada === "3"){
+//          listaProductos.push("Carne");
+//      } else if (entrada === "4"){
+//         listaProductos.push("Pollo");
+//      } else {
+//          alert("No ingresaste el numero correspondiente");
+//      }
+//     }
+// const nuevaLista = listaProductos.concat()
+// alert(nuevaLista.join("\n"));
 
 
 // alert("En el siguiente proceso va a poder conocer más sobre la moto que desea.")
@@ -237,13 +279,13 @@ var num2 = parseInt(y); */
 // const barata = motos.filter(producto => producto.precio < 300000)
 // console.log(barata)
 
-function respuestaClick(){
-    console.log("Respuesta evento click")
-}
-    let evento = prompt("Ingrese el evento")
-    let boton = document.getElementById
-    ("btnPrincipal");
-    if(evento === "click"){
-        boton.addEventListener(evento, respuestaClick);
-    }
+// function respuestaClick(){
+//     console.log("Respuesta evento click")
+// }
+//     let evento = prompt("Ingrese el evento")
+//     let boton = document.getElementById
+//     ("btnPrincipal");
+//     if(evento === "click"){
+//         boton.addEventListener(evento, respuestaClick);
+//     }
 
