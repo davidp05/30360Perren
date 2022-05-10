@@ -200,11 +200,11 @@ var num2 = parseInt(y); */
 
 //Actividad 3
 
-let alumnos = '';
-for (let index = 0; index < 10; index++) {
-    alumnos += prompt("INGRESAR NOMBRE DE ALUMNO")+"\n";
-}
-alert(alumnos);
+// let alumnos = '';
+// for (let index = 0; index < 10; index++) {
+//     alumnos += prompt("INGRESAR NOMBRE DE ALUMNO")+"\n";
+// }
+// alert(alumnos);
 
 // alert("Ingrese 10 nombres")
 
@@ -279,13 +279,13 @@ alert(alumnos);
 // const barata = motos.filter(producto => producto.precio < 300000)
 // console.log(barata)
 
-// function respuestaClick(){
-//     console.log("Respuesta evento click")
-// }
-//     let evento = prompt("Ingrese el evento")
-//     let boton = document.getElementById
-//     ("btnPrincipal");
-//     if(evento === "click"){
-//         boton.addEventListener(evento, respuestaClick);
-//     }
+function respuestaClick(){
+    console.log("Respuesta evento click")
+}
+    let evento = prompt("Ingrese el evento")
+    let boton = document.getElementById
+    ("btnPrincipal");
+    if(evento === "click"){
+        boton.addEventListener(evento, respuestaClick);
+    }
 
