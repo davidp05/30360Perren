@@ -279,13 +279,103 @@ var num2 = parseInt(y); */
 // const barata = motos.filter(producto => producto.precio < 300000)
 // console.log(barata)
 
-function respuestaClick(){
-    console.log("Respuesta evento click")
-}
-    let evento = prompt("Ingrese el evento")
-    let boton = document.getElementById
-    ("btnPrincipal");
-    if(evento === "click"){
-        boton.addEventListener(evento, respuestaClick);
+// function respuestaClick(){
+//     console.log("Respuesta evento click")
+// }
+//     let evento = prompt("Ingrese el evento")
+//     let boton = document.getElementById
+//     ("btnPrincipal");
+//     if(evento === "click"){
+//         boton.addEventListener(evento, respuestaClick);
+//     }
+
+// E - commerce
+
+const contenedor = document.getElementById("productos");
+const tablaCarrito = document.getElementById("tablaCarrito");
+const carrito = [];
+
+const PRODUCTOS = [
+    {
+        id: 1,
+        nombre: "Tornado 250",
+        precio: 1500000,
+        stock: 5,
+        imagen: "https://motos.honda.com.ar/uploads/modelos/28/images/sliders/115_0s-0diseno-tornado-perfil-der.jpg"
+    },
+    {
+        id: 2,
+        nombre: "Titan 150",
+        precio: 500000,
+        stock: 10,
+        imagen: "https://motos.honda.com.ar/uploads/modelos/23/images/colores/23c-0web-cgtitan-color-blanco.jpg"
+    },
+    {
+        id: 3,
+        nombre: "Wave",
+        precio: 1500,
+        stock: 0,
+        imagen: "https://motos.honda.com.ar/uploads/modelos/21/images/colores/21c-0web-wave-2020-roja.jpg"
     }
+];
+
+const getCard = (item) => {
+    return (
+        `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
+            <div class="card-body">
+                <h5 class="card-title">${item.nombre}</h5>
+                <p class="card-text">$${item.precio}</p>
+                <p class="card-text">Stock: ${item.stock}</p>
+                <button onclick=agregarCarrito(${item.id}) class="btn ${item.stock ? 'btn-primary' : 'btn-secondary'}" ${!item.stock ? 'disabled' : '' } >Agregar al carrito</button>
+            </div>
+        </div>
+    `);
+};
+
+const getRow = (item) => {
+    return(
+        `
+    <tr>
+        <th scope="row">${item.id}</th>
+        <td>${item.nombre}</td>
+        <td>${item.cantidad}</td>
+        <td>$${item.precio * item.cantidad} ($${item.precio})</td>
+        <td><img style="width:20px" src="${item.imagen}" alt="imagen"></td>
+    </tr>
+        `
+    )
+}
+
+
+// función flecha
+const cargarProductos = (datos, nodo, esTabla) => {
+    let acumulador = "";
+    datos.forEach((el) => {
+        acumulador += esTabla ? getRow(el) : getCard(el);
+    })
+    nodo.innerHTML = acumulador;
+};
+
+const agregarCarrito = (id) => {
+    const seleccion = PRODUCTOS.find(item => item.id === id);
+    const busqueda = carrito.findIndex(el => el.id === id);
+    
+    if (busqueda === -1) {
+        carrito.push({
+            id: seleccion.id,
+            nombre: seleccion.nombre,
+            precio: seleccion.precio,
+            cantidad: 1,
+            imagen: seleccion.imagen,
+        })
+    } else {
+        carrito[busqueda].cantidad = carrito[busqueda].cantidad + 1
+    }
+    
+    cargarProductos(carrito, tablaCarrito, true);
+}
+
+cargarProductos(PRODUCTOS, contenedor, false);
 
