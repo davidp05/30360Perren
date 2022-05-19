@@ -291,6 +291,18 @@ var num2 = parseInt(y); */
 
 // E - commerce
 
+let usuario;
+let usuarioStorage = sessionStorage.getItem("usuario");
+
+if(usuarioStorage){
+  let contenedor = document.createElement("h1");
+  contenedor.innerHTML = `${sessionStorage.getItem("usuario")}`;
+  document.body.append(contenedor);
+}else{
+  usuario = prompt("ingrese su nombre");
+  sessionStorage.setItem("usuario", usuario);
+}
+
 const contenedor = document.getElementById("productos");
 const tablaCarrito = document.getElementById("tablaCarrito");
 const carrito = [];
