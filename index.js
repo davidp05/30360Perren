@@ -291,17 +291,35 @@ var num2 = parseInt(y); */
 
 // E - commerce
 
-let usuario;
-let usuarioStorage = sessionStorage.getItem("usuario");
+Swal
+    .fire({
+        title: "Tu nombre",
+        input: "text",
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        cancelButtonText: "Cancelar",
+    })
+    .then(resultado => {
+        if (resultado.value) {
+            let nombre = resultado.value;
+            let contenedor = document.createElement("h1");
+            contenedor.innerHTML = `${nombre}`;
+            document.body.append(contenedor);
+        }
+    });
 
-if(usuarioStorage){
-  let contenedor = document.createElement("h1");
-  contenedor.innerHTML = `${sessionStorage.getItem("usuario")}`;
-  document.body.append(contenedor);
-}else{
-  usuario = prompt("ingrese su nombre");
-  sessionStorage.setItem("usuario", usuario);
-}
+
+// let usuario;
+// let usuarioStorage = sessionStorage.getItem("usuario");
+
+// if(usuarioStorage){
+//   let contenedor = document.createElement("h1");
+//   contenedor.innerHTML = `${sessionStorage.getItem("usuario")}`;
+//   document.body.append(contenedor);
+// }else{
+//   usuario = prompt("ingrese su nombre");
+//   sessionStorage.setItem("usuario", usuario);
+// }
 
 const contenedor = document.getElementById("productos");
 const tablaCarrito = document.getElementById("tablaCarrito");
@@ -374,20 +392,25 @@ const agregarCarrito = (id) => {
     const seleccion = PRODUCTOS.find(item => item.id === id);
     const busqueda = carrito.findIndex(el => el.id === id);
     
-    if (busqueda === -1) {
-        carrito.push({
-            id: seleccion.id,
-            nombre: seleccion.nombre,
-            precio: seleccion.precio,
-            cantidad: 1,
-            imagen: seleccion.imagen,
-        })
-    } else {
-        carrito[busqueda].cantidad = carrito[busqueda].cantidad + 1
-    }
-    
-    cargarProductos(carrito, tablaCarrito, true);
-}
+    busqueda === -1 ? carrito.push ({id: seleccion.id, nombre: seleccion.nombre, precio: seleccion.precio, cantidad: 1, imagen: seleccion.imagen,}) : carrito[busqueda].cantidad = carrito[busqueda].cantidad + 1;
+
+    cargarProductos(carrito, tablaCarrito, true);}
 
 cargarProductos(PRODUCTOS, contenedor, false);
+
+// Condicion IF
+//     if (busqueda === -1) {
+//         carrito.push({
+//             id: seleccion.id,
+//             nombre: seleccion.nombre,
+//             precio: seleccion.precio,
+//             cantidad: 1,
+//             imagen: seleccion.imagen,
+//         })
+//     } else {
+//         carrito[busqueda].cantidad = carrito[busqueda].cantidad + 1
+//     }
+    
+//     cargarProductos(carrito, tablaCarrito, true);
+// }
 
